@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Admin Dashboard</h2><span class="badge bg-danger">Admin</span>
+</div>
+<div class="card shadow-sm mb-3"><div class="card-body">Total Registered Users: <strong>{{ total_users }}</strong></div></div>
+<div class="card shadow-sm"><div class="card-header">Members List</div><div class="card-body">
+    <table class="table"><thead><tr><th>Username</th><th>Name</th><th>Email</th></tr></thead>
+    <tbody>{% for m in members %}<tr><td>{{ m.username }}</td><td>{{ m.first_name }} {{ m.last_name }}</td><td>{{ m.email }}</td></tr>{% endfor %}</tbody></table>
+</div></div>
+{% endblock %}
